@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Main{
         PhoneBook phoneBook = new PhoneBook();
 
         while (true) {
-            System.out.print("\n Что вы хотите сделать?" +
+            System.out.print("\n\n Что вы хотите сделать?" +
                     "\n1: Добавить новый контакт в телефонную книгу" +
                     "\n2: Вывести все контакты" +
                     "\n3: Найти телефон(ы) по имени" +
@@ -30,8 +31,18 @@ public class Main{
                 phoneBook.AddContact(name, phoneNum);
             }
             else if(choose.equals("2")) System.out.println(PhoneBook.showPhoneBook());
-
-
+            else if (choose.equals("3")) {
+                System.out.print("\nВведите имя для поиска номера: ");
+                String name = UserChoose.nextLine();
+                ArrayList<Integer> arrayList = new ArrayList<>();
+                arrayList = phoneBook.FindNumber(name);
+                System.out.print(arrayList);
+            }
+            else if(choose.equals("4")) {
+                System.out.print("Введите имя контакта, который хотите удалить: ");
+                String name = UserChoose.nextLine();
+                phoneBook.RemoveContact(name);
+            }
             else if (choose.equals("0")) break;
 
 
