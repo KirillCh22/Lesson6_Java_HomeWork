@@ -46,6 +46,7 @@ public class PhoneBook {
         return arrayList;
     }
 
+    // МЕТОД ПО УДАЛЕНИЮ КОНТАКТА ИЗ ТЕЛЕФОННОЙ КНИГИ
     public void RemoveContact(String name) {
         ArrayList<Integer> arrayList = phoneBook.get(name);
         if (arrayList == null) {
@@ -57,7 +58,6 @@ public class PhoneBook {
         }
 
     }
-
 
      //МЕТОД ПО ВЫВОДУ ТЕЛЕФОННОГО СПРАВОЧНИКА
     public static TreeMap<String, ArrayList<Integer>> showPhoneBook() {

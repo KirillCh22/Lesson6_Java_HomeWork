@@ -9,8 +9,6 @@ public class Main{
     public static void main(String[] args) {
         Scanner UserChoose = new Scanner(System.in);
         PhoneBook phoneBook = new PhoneBook();
-//        Map<String, ArrayList<Integer>> MapPhoneBook = new HashMap<>();
-//        ArrayList<Integer> arrayListPhone = new ArrayList<>();
 
         while (true) {
             System.out.print("\n\n Что вы хотите сделать?" +
@@ -29,10 +27,8 @@ public class Main{
                 System.out.print("Введите номер: ");
                 int phoneNum = Integer.parseInt(UserChoose.nextLine());
                 phoneBook.AddContact(name, phoneNum);
-//                MapPhoneBook.put(name, arrayListPhone);
             }
             else if(choose.equals("2")) {
-//                System.out.println(phoneBook.showPnoneBook(MapPhoneBook));
                 System.out.println(PhoneBook.showPhoneBook());
             }
 
@@ -49,11 +45,6 @@ public class Main{
                 phoneBook.RemoveContact(name);
             }
             else if (choose.equals("0")) break;
-
-
         }
-
-
-
     }
 }
