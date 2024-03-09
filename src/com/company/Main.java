@@ -1,9 +1,7 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
-
+import java.awt.image.AreaAveragingScaleFilter;
+import java.util.*;
 
 
 public class Main{
@@ -11,6 +9,8 @@ public class Main{
     public static void main(String[] args) {
         Scanner UserChoose = new Scanner(System.in);
         PhoneBook phoneBook = new PhoneBook();
+//        Map<String, ArrayList<Integer>> MapPhoneBook = new HashMap<>();
+//        ArrayList<Integer> arrayListPhone = new ArrayList<>();
 
         while (true) {
             System.out.print("\n\n Что вы хотите сделать?" +
@@ -29,8 +29,13 @@ public class Main{
                 System.out.print("Введите номер: ");
                 int phoneNum = Integer.parseInt(UserChoose.nextLine());
                 phoneBook.AddContact(name, phoneNum);
+//                MapPhoneBook.put(name, arrayListPhone);
             }
-            else if(choose.equals("2")) System.out.println(PhoneBook.showPhoneBook());
+            else if(choose.equals("2")) {
+//                System.out.println(phoneBook.showPnoneBook(MapPhoneBook));
+                System.out.println(PhoneBook.showPhoneBook());
+            }
+
             else if (choose.equals("3")) {
                 System.out.print("\nВведите имя для поиска номера: ");
                 String name = UserChoose.nextLine();
